@@ -17,6 +17,7 @@
 * Set --run-lock-timeout to wait/bail if another client has the runlock (CHEF-5074)
 * A node's environment can now be set with 'knife node environment set NODE ENVIRONMENT' (CHEF-1910)
 * remote\_file's source attribute does not support DelayedEvaluators (CHEF-5162)
+* chef-full template gets knife options to override install script url, add wget/curl cli options, and custom install commands (CHEF-4697)
 
 ## Last Release: 11.12.0 RC1 (03/31/2014)
 * SIGTERM will once-more kill a non-daemonized chef-client (CHEF-5172)
