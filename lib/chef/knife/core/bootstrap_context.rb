@@ -105,6 +105,15 @@ CONFIG
           knife_config[:bootstrap_version] || Chef::VERSION
         end
 
+        def chef_version_string
+          # Check if chef_version is a prerelease version
+          if chef_version.split(".").length > 3
+            "-p -v #{chef_version}"
+          else
+            "-v #{chef_version}"
+          end
+        end
+
         def first_boot
           (@config[:first_boot_attributes] || {}).merge(:run_list => @run_list)
         end
@@ -113,4 +122,3 @@ CONFIG
     end
   end
 end
-
